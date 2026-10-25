@@ -150,7 +150,7 @@ export function BookArt({ className = "" }: { className?: string }) {
   );
 }
 
-export function ProjectArt({ slug, className }: { slug: string; className?: string }) {
+export function ProjectArt({ slug, className = "" }: { slug: string; className?: string }) {
   if (slug === "herbora-ai") return <LeafArt className={className} />;
   if (slug === "ai-mental-health-companion") return <MindArt className={className} />;
   return <BookArt className={className} />;
