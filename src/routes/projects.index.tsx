@@ -19,6 +19,7 @@ export const Route = createFileRoute("/projects/")({
 
 function Projects() {
   const [first, ...rest] = projects;
+  if (!first) return null;
   return (
     <>
       <PageHeader eyebrow="Projects" title="Things I'm building and learning from">
