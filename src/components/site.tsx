@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "framer-motion";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Github, Linkedin } from "./brand-icons";
 import { useState, type ReactNode } from "react";
 import { profile, type ProjectStatus } from "@/data/portfolio";
 

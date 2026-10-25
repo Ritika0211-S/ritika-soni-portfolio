@@ -16,7 +16,7 @@ export function HeroVisual() {
       <div className="grid-lines absolute inset-0 rounded-[2rem] [mask-image:radial-gradient(circle,black,transparent_70%)]" />
       <motion.div
         className="bg-brand absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-3xl"
-        animate={reduce ? undefined : { scale: [1, 1.15, 1] }}
+        animate={reduce ? {} : { scale: [1, 1.15, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div
@@ -40,7 +40,7 @@ export function HeroVisual() {
       </motion.div>
       <motion.div
         className="glass absolute bottom-[10%] right-[2%] rounded-xl px-4 py-3"
-        animate={reduce ? undefined : { y: [0, -10, 0] }}
+        animate={reduce ? {} : { y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity }}
       >
         <p className="font-mono text-[11px] text-muted-foreground">model.train()</p>
@@ -52,7 +52,7 @@ export function HeroVisual() {
       </motion.div>
       <motion.div
         className="glass absolute right-[8%] top-[4%] rounded-full px-3 py-1.5 font-mono text-[11px] text-success"
-        animate={reduce ? undefined : { y: [0, 8, 0] }}
+        animate={reduce ? {} : { y: [0, 8, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       >
         ● learning in progress

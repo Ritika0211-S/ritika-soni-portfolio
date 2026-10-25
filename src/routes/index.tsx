@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Award, GraduationCap, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award, GraduationCap, Mail, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Linkedin } from "@/components/brand-icons";
 import { Footer, Header, Placeholder, Section, Socials, StatusBadge } from "@/components/site";
 import { HeroVisual } from "@/components/HeroVisual";
 import { ContactForm } from "@/components/ContactForm";

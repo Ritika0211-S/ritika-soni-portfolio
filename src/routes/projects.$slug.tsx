@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { Github } from "@/components/brand-icons";
 import { Footer, Header, StatusBadge } from "@/components/site";
 import { projects } from "@/data/portfolio";
 
