@@ -1,141 +1,181 @@
 // ============================================================
 // EDIT THIS FILE to update your portfolio content.
-// Anything marked `verified: false` or containing "[ ]" is a placeholder
-// that should be confirmed before publishing.
+// Any text inside [square brackets] shows on the site as a dashed
+// "placeholder" chip so you can spot what still needs filling in.
 // ============================================================
 
 export const profile = {
   name: "Ritika Soni",
-  tagline: "Building ideas into meaningful technology.",
-  intro:
-    "I'm a Computer Science Engineering student passionate about software development, artificial intelligence, and building solutions that solve real-world problems.",
-  roles: ["Computer Science Engineer", "AI/ML Enthusiast", "Software Developer in Progress", "Community Contributor"],
-  linkedin: "https://www.linkedin.com/in/ritika-soni-5955aa2a9",
-  github: "", // TODO: add e.g. "https://github.com/your-username"
-  email: "", // TODO: add your professional email
+  linkedin: "https://www.linkedin.com/in/ritika-soni-5955aa2a9/",
+  github: "https://github.com/Ritika0211-S",
+  email: "", // TODO: add your email, e.g. "ritika@example.com"
+  resume: "", // TODO: put resume.pdf in /public and set this to "/resume.pdf"
   location: "Bilaspur, Chhattisgarh, India",
 };
 
-export type Skill = { name: string; verified: boolean };
-export const skillGroups: { title: string; skills: Skill[] }[] = [
-  { title: "Programming Languages", skills: [{ name: "[Add language]", verified: false }] },
-  { title: "Frontend Development", skills: [{ name: "HTML / CSS", verified: false }, { name: "[Add framework]", verified: false }] },
-  { title: "AI and Machine Learning", skills: [{ name: "[Add library / topic]", verified: false }] },
-  { title: "Databases and Backend", skills: [{ name: "[Add database]", verified: false }] },
-  { title: "Developer Tools", skills: [{ name: "Git / GitHub", verified: false }] },
-  { title: "Cloud and Emerging Technologies", skills: [{ name: "Google Cloud (learning)", verified: false }] },
+export const education = {
+  degree: "B.Tech in Computer Science Engineering",
+  institution: "Government Engineering College, Bilaspur, Chhattisgarh",
+  years: "2023–2027 (Expected)",
+  score: "SPI: 7.24 through Semester VI",
+};
+
+export const skillGroups: { title: string; skills: string[]; note?: string }[] = [
+  { title: "Programming Languages", skills: ["C", "Python", "JavaScript"] },
+  { title: "Web Development", skills: ["HTML", "CSS", "JavaScript", "[React — confirm hands-on use]"] },
+  {
+    title: "Computer Science Fundamentals",
+    skills: ["Data Structures and Algorithms", "OOP fundamentals", "Database Management Systems", "Searching and sorting", "Basic algorithmic problem-solving"],
+  },
+  { title: "Database", skills: ["SQL", "Relational database concepts", "CRUD operations", "Queries, joins, grouping & aggregates"] },
+  { title: "AI/ML and Data Tools", skills: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "scikit-learn"] },
+  {
+    title: "AI and Productivity",
+    skills: ["Learning & brainstorming with AI tools", "Research assistance", "Summarization", "Prompt writing", "Debugging support"],
+    note: "I try to evaluate AI-generated results carefully rather than accepting them blindly.",
+  },
+  { title: "Developer Tools", skills: ["Git", "GitHub", "Visual Studio Code"] },
+  { title: "Google Cloud", skills: ["Learning through Google Cloud student developer activities"] },
 ];
 
-export type ProjectStatus = "Completed" | "Ongoing" | "Planned" | "To verify";
+export type Accent = "sage" | "clay" | "ochre";
 export type Project = {
   slug: string;
+  number: string;
   name: string;
+  status: string;
+  current?: boolean;
+  accent: Accent;
   summary: string;
   problem: string;
   solution: string;
-  features: string[];
+  features: { title: string; text: string; planned?: boolean }[];
+  role: string;
   stack: string[];
-  contribution: string;
-  status: ProjectStatus;
-  github?: string;
-  demo?: string;
+  learnings: string;
+  future: string[];
+  disclaimer?: string;
+  github: string; // leave "" until you have the real link
+  demo: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "learnify",
-    name: "Learnify",
-    summary: "An educational website presenting learning resources through a friendly frontend.",
-    problem: "Learning resources are scattered and often hard for students to navigate.",
-    solution: "A clean, user-friendly interface that organises learning resources in one place.",
-    features: ["Organised resource sections", "Simple, readable layout", "[Add verified feature]"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
-  },
-  {
-    slug: "scholarmatch",
-    name: "ScholarMatch",
-    summary: "Scholarship discovery based on age, income, GPA, field of study and eligibility.",
-    problem: "Students miss scholarships because eligibility criteria are complex and spread across sources.",
-    solution: "Match users to scholarships by comparing their profile to eligibility criteria.",
-    features: ["Profile-based eligibility filtering", "Criteria: age, income, GPA, field of study", "[Add verified feature]"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
-  },
-  {
-    slug: "ai-career-guidance",
-    name: "AI Career Guidance Platform",
-    summary: "Explore career paths, find skill gaps and build personalised learning roadmaps.",
-    problem: "Students often lack personalised guidance on which skills to build for a career path.",
-    solution: "An AI-assisted concept that suggests paths, highlights gaps and recommends resources.",
-    features: ["Career path exploration", "Skill-gap identification", "Personalised roadmaps"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
+    slug: "herbora-ai",
+    number: "01",
+    name: "Herbora-AI",
+    status: "Currently working on",
+    current: true,
+    accent: "sage",
+    summary:
+      "Herbora-AI is an AI-powered platform designed to help users explore medicinal herbs, understand their traditional uses, discover where they can be found, and learn about their potential relevance to different health conditions.",
+    problem:
+      "Information about medicinal herbs is scattered across books, websites and word of mouth, and it is often hard to tell where a herb grows, how it is traditionally used, or which conditions it is associated with.",
+    solution:
+      "A single, approachable place to explore herbal knowledge, with an AI-powered interface that makes it easier to ask questions and browse information about herbs and their traditional uses.",
+    features: [
+      { title: "Medicinal Herb Discovery", text: "Explore herbs and learn about their traditional medicinal uses." },
+      { title: "Herb Information", text: "Understand where herbs are commonly found and how they are traditionally used." },
+      { title: "Health Condition Exploration", text: "Discover herbs traditionally associated with particular health conditions." },
+      { title: "AI-Powered Information", text: "Make herbal knowledge easier to explore through an AI-powered interface." },
+      { title: "Plant-related identification", text: "[Confirm whether this is implemented or planned]", planned: true },
+    ],
+    role: "[Describe your role — e.g. design, frontend, AI integration, data collection]",
+    stack: ["[Frontend]", "[Backend]", "[AI model / API]", "[Database]"],
+    learnings: "[What was hard while building Herbora-AI, and what you learned from it]",
+    future: ["[Planned improvement 1]", "[Planned improvement 2]"],
+    disclaimer:
+      "Herbora-AI is intended for educational exploration of herbal information and is not a substitute for professional medical advice, diagnosis, or treatment.",
+    github: "",
+    demo: "",
   },
   {
     slug: "ai-mental-health-companion",
+    number: "02",
     name: "AI Mental Health Companion",
-    summary: "Supportive mental wellness interactions and awareness.",
-    problem: "Many students hesitate to seek support or lack awareness of mental wellness resources.",
-    solution: "A supportive companion concept focused on gentle interactions and awareness.",
-    features: ["Supportive conversations", "Wellness awareness content", "[Add verified feature]"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
+    status: "[Status — e.g. Prototype / Completed]",
+    accent: "clay",
+    summary:
+      "An AI-based mental wellness project exploring how mood tracking and conversational support can help users reflect on their emotional well-being.",
+    problem:
+      "Many students find it hard to notice patterns in their mood or to talk about how they feel, and may not know simple self-care steps they can take.",
+    solution:
+      "A companion app that lets users record their mood, chat with a supportive AI, and get general self-care suggestions — as a space for reflection, not a replacement for professional help.",
+    features: [
+      { title: "Face-image mood estimation", text: "An experimental feature that tries to estimate mood from a face image. It cannot reliably determine a person's true emotional state." },
+      { title: "Manual mood selection", text: "For users who prefer to record their mood themselves." },
+      { title: "Supportive AI chatbot", text: "Conversations meant to be supportive and encouraging. It is not a therapist." },
+      { title: "General self-care suggestions", text: "Symptom-based general self-care ideas and guidance on possible next steps at home." },
+    ],
+    role: "[Describe your role in this project]",
+    stack: ["[Confirm technologies]"],
+    learnings: "[What you learned — e.g. about emotion-recognition limits, responsible AI, chatbot design]",
+    future: ["[Potential improvement 1]", "[Potential improvement 2]"],
+    disclaimer:
+      "This project is not a diagnostic or medical tool. Face-based mood estimation is experimental, and the chatbot does not replace a qualified mental health professional.",
+    github: "",
+    demo: "",
   },
   {
-    slug: "smart-agriculture",
-    name: "Smart Agriculture",
-    summary: "IoT-oriented agricultural monitoring and smart farming.",
-    problem: "Farmers often lack real-time insight into field conditions.",
-    solution: "An IoT concept for monitoring agricultural conditions to support smarter decisions.",
-    features: ["Field condition monitoring", "[Add sensors used]", "[Add verified feature]"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
+    slug: "learnify",
+    number: "03",
+    name: "Learnify",
+    status: "[Status — e.g. Concept / Prototype]",
+    accent: "ochre",
+    summary: "Learnify is an educational website concept focused on presenting learning resources through a clear and accessible interface.",
+    problem: "[Objective — what problem Learnify sets out to address]",
+    solution: "[How Learnify approaches it]",
+    features: [{ title: "[Feature]", text: "[Add only features that are implemented]" }],
+    role: "[Describe your contribution]",
+    stack: ["[Confirm technologies]"],
+    learnings: "[What you learned]",
+    future: ["[Next step]"],
+    github: "",
+    demo: "",
+  },
+];
+
+export const activities = [
+  {
+    title: "Google Cloud Arcade Facilitator",
+    period: "2026",
+    text: "Participated in a student-focused cloud learning and developer community initiative. Helped encourage participation, learning, and engagement around Google Cloud learning activities.",
+    extra: "[Add your exact facilitator responsibilities and achievements]",
+    tags: ["Cloud learning", "Community", "Peer support"],
   },
   {
-    slug: "face-recognition-attendance",
-    name: "Face Recognition Attendance",
-    summary: "Computer vision to automate attendance management.",
-    problem: "Manual attendance is slow and error-prone.",
-    solution: "Recognise faces from a camera feed to mark attendance automatically.",
-    features: ["Face detection and recognition", "Automated attendance records", "[Add verified feature]"],
-    stack: ["[Confirm stack]"],
-    contribution: "[Describe your specific role]",
-    status: "To verify",
+    title: "College Technical Events",
+    period: "[Dates]",
+    text: "Participated in organizing college-level hackathons and quizzes — coordinating with fellow students, communicating with participants, and helping technical learning events run smoothly.",
+    extra: "[Optional: event names you helped with]",
+    tags: ["Event coordination", "Teamwork", "Communication"],
+  },
+  {
+    title: "NSS Volunteer",
+    period: "[Dates]",
+    text: "Active volunteer with the NSS unit of Government Engineering College, Bilaspur. Holder of the NSS B and C certificates, with involvement in community activities that build teamwork and discipline.",
+    extra: "[Optional: activities you took part in]",
+    tags: ["Community service", "Teamwork", "Discipline"],
   },
 ];
 
-export const experiences: { title: string; org: string; period: string; points: string[]; verified: boolean }[] = [
-  { title: "Google Cloud Arcade Facilitator", org: "Google Cloud", period: "2026", points: ["[Describe how you guided learners]"], verified: false },
-  { title: "Community Member", org: "Google Developer Group (campus)", period: "[Dates]", points: ["[Events you participated in or helped organise]"], verified: false },
-  { title: "Event & Hackathon Organisation", org: "[Club / Organisation]", period: "[Dates]", points: ["[Your role in organising technical events]"], verified: false },
-  { title: "NSS Volunteer", org: "Government Engineering College, Bilaspur", period: "[Dates]", points: ["[Volunteering activities]"], verified: false },
-];
-
-export const achievements: { title: string; category: string; link?: string; verified: boolean }[] = [
-  { title: "[Certification name]", category: "Certification", verified: false },
-  { title: "[Google Cloud skill badge / milestone]", category: "Google Cloud", verified: false },
-  { title: "[Hackathon name & outcome]", category: "Hackathon", verified: false },
-  { title: "[Technical event organised]", category: "Community", verified: false },
-];
-
-export const education = {
-  institution: "Government Engineering College, Bilaspur, Chhattisgarh",
-  degree: "Bachelor of Technology in Computer Science Engineering",
-  years: "[Start year] – [Graduation year]",
-  details: "[Add CGPA or academic highlights after verifying]",
-  coursework: ["[Data Structures]", "[Operating Systems]", "[DBMS]"],
+export type Certificate = {
+  category: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  image?: string; // path in /public, e.g. "/certs/nss-b.jpg"
+  file?: string; // PDF path in /public
+  verifyUrl?: string;
 };
 
-export const exploring = [
-  { title: "Artificial Intelligence & Machine Learning", note: "Learning core concepts through small experiments." },
-  { title: "Full-stack Development", note: "Building end-to-end apps from interface to data." },
-  { title: "Cloud Technologies", note: "Hands-on labs and Google Cloud learning paths." },
-  { title: "Data Structures & Algorithms", note: "Regular problem-solving practice." },
-  { title: "Software Engineering", note: "Writing cleaner, maintainable code." },
+export const certificates: Certificate[] = [
+  { category: "NSS", title: "NSS B Certificate", issuer: "[Issuing organization]", date: "[Completion date]" },
+  { category: "NSS", title: "NSS C Certificate", issuer: "[Issuing organization]", date: "[Completion date]" },
+  { category: "Language Courses", title: "[Add Certificate Details]", issuer: "[Issuing organization]", date: "[Completion date]" },
+  { category: "Google Cloud / Developer Learning", title: "[Add Certificate Details]", issuer: "[Issuing organization]", date: "[Completion date]" },
+  { category: "Other Technical Courses", title: "[Add Certificate Details]", issuer: "[Issuing organization]", date: "[Completion date]" },
 ];
+
+export const isPlaceholder = (s: string) => s.trim().startsWith("[");
